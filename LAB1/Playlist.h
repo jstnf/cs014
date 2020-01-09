@@ -33,7 +33,6 @@ private:
     PlaylistNode* tail;
 public:
     Playlist();
-    void PrintMenu(string);
     void print(string title) const;
     bool empty() const;
     void push_back(PlaylistNode*);
