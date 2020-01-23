@@ -92,14 +92,12 @@ template<typename T>
 unsigned min_index(const vector<T> &vals, unsigned index)
 {
     unsigned minIndex = index;
-    T minVal = vals.at(index);
 
     for (unsigned i = index + 1; i < vals.size(); ++i)
     {
-        if (minVal > vals.at(i))
+        if (vals.at(minIndex) > vals.at(i))
         {
             minIndex = i;
-            minVal = vals.at(i);
         }
     }
 
@@ -109,7 +107,7 @@ unsigned min_index(const vector<T> &vals, unsigned index)
 template<typename T>
 void selection_sort(vector<T> &vals)
 {
-    for (unsigned i = 0; i < vals.size(); ++i)
+    for (unsigned i = 0; i + 1 < vals.size(); ++i)
     {
         unsigned minIndex = min_index(vals, i);
         T temp = vals.at(i);
